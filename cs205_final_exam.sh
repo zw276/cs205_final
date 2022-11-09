@@ -11,14 +11,8 @@
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
 
-BEGIN { HP=0;sum=0; NR } 
+BEGIN { HP=0;sum=0; NR ; FILENAME} 
 
 { $0 sum++ } 
 
-END { print 
-"# ===== SUMMARY OF DATA FILE =====
-#    File name: FILENAME
-#    Total Pokemon: NR
-#    Avg. HP: [VALUE]
-#    Avg. Attack: [VALUE]
-# ===== END SUMMARY =====" }
+END { printf ( "# ===== SUMMARY OF DATA FILE =====\n#    File name: %s\n#    Total Pokemon: %d\n#    Avg. HP: [VALUE]\n#    Avg. Attack: [VALUE]\n# ===== END SUMMARY =====", }
