@@ -10,4 +10,4 @@
 # The spacing and header formatting should match the above formatting description exactly.
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
-BEGIN { sum=0; } { $0 sum++ } END { print sum }
+BEGIN { HP=0;sum=0; NR } { $0 sum++ } END { print sum }
