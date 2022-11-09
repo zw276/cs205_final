@@ -13,6 +13,6 @@
 
 BEGIN { HP=0 ; Atk=0 ; NR ; FILENAME ; NF} 
 
-{ $0 HP+=$(NF-8) ; Atk+=$(NF-7) } 
+{ HP+=$(NF-8) ; Atk+=$(NF-7) } 
 
 END { printf "# ===== SUMMARY OF DATA FILE =====\n#    File name: %s\n#    Total Pokemon: %d\n#    Avg. HP: %d\n#    Avg. Attack: %d\n# ===== END SUMMARY =====" FILENAME NR HP/NR Atk/NR}
