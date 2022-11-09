@@ -1,7 +1,7 @@
 # TODO: Modify this file to create a shell script that is able to use awk to go through a file formatted like pokemon.dat and provides a printed report in the following format (where your script correctly calculates the values that go into the [VALUE] placeholders):
 # ===== SUMMARY OF DATA FILE =====
 #    File name: FILENAME
-#    Total Pokemon: [VALUE]
+#    Total Pokemon: NR
 #    Avg. HP: [VALUE]
 #    Avg. Attack: [VALUE]
 # ===== END SUMMARY =====
@@ -11,4 +11,14 @@
 # There should be a comment explaining the purpose of each line in your shell script. 
 # The data file will be passed in to the script as a positional parameter and will not necessarily be called pokemon.dat. However, you can assume that any file passed to this script will be formatted exactly the way pokemon.dat is formatted.
 
-BEGIN { HP=0;sum=0; NR } { $0 sum++ } END { print sum }
+BEGIN { HP=0;sum=0; NR } 
+
+{ $0 sum++ } 
+
+END { print 
+"# ===== SUMMARY OF DATA FILE =====
+#    File name: FILENAME
+#    Total Pokemon: NR
+#    Avg. HP: [VALUE]
+#    Avg. Attack: [VALUE]
+# ===== END SUMMARY =====" }
